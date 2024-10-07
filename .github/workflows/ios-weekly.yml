@@ -81,6 +81,9 @@ jobs:
           echo "${{ secrets.SENTRY_PROPERTIES }}" > ./ios/sentry.properties
           git submodule update --init --recursive
 
+      - name: Copy sentry properties
+        run: mv ios/sentry.properties.example ios/sentry.properties
+
       - name: alias yarn.cmd to yarn
         run: alias yarn.cmd="yarn"
 
