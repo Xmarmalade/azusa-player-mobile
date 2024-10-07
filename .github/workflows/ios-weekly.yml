@@ -79,6 +79,7 @@ jobs:
           echo "${{ secrets.ENV_FILE }}" > .env
           echo "APPSTORE=true" >> .env
           echo "${{ secrets.SENTRY_PROPERTIES }}" > ./ios/sentry.properties
+          mv .env.example .env
           git submodule update --init --recursive
 
       - name: Copy sentry properties
